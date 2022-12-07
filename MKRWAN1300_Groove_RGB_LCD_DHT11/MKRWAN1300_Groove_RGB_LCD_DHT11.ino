@@ -86,10 +86,10 @@ void loop() {
 
   // Split both words (16 bits) into 2 bytes of 8
   byte payload[5];
-  payload[0] = 01;
+  payload[0] = 01;    // I use Elsys payload encoding and 0x01 means Temperature https://www.elsys.se/en/elsys-payload/
   payload[1] = highByte(temperature);
   payload[2] = lowByte(temperature);
-  payload[3] = 02;
+  payload[3] = 02;    // I use Elsys payload encoding and 0x01 means Humidity https://www.elsys.se/en/elsys-payload/
   payload[4] = lowByte(humidity);
 
   for (int i = 0; i <= 600; i++) {
